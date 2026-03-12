@@ -13,7 +13,7 @@ standard SIDER data format.
 ## Repository contents
 
 -   **poster/** Poster PDF and figure source files for the PVLens--SIDER
-    interoperability poster presented at AMIA 2026.
+    interoperability poster submitted for review at AMIA 2026.
 
 -   **pvlens_sider_update/** Code, documentation, and release materials
     for generating **SIDER-compatible replacement files** derived from
@@ -66,7 +66,6 @@ Location:
 pvlens_sider_update/release/files/
 ```
 
-
 The release includes the following compressed TSV files:
 
 - `meddra_all_label_indications.tsv.gz`
@@ -98,7 +97,6 @@ Anthony McDonald (Georgia State University, Undergraduate), Jeffery L. Painter.
 Enabling Interoperability Between PVLens and SIDER:
 A Pipeline for Generating SIDER-Compatible Drug–Adverse Event Data.
 Submitted for consideration to the AMIA Annual Symposium 2026.
-
 
 ------------------------------------------------------------------------
 
