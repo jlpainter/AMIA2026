@@ -50,6 +50,44 @@ This repository provides a pipeline that:
 The resulting files maintain the original **SIDER drug identifiers**
 while substituting PVLens-derived safety data.
 
+## Pipeline overview
+
+![PVLens–SIDER pipeline](poster/figures/figure_01.png)
+
+------------------------------------------------------------------------
+
+## Download PVLens–SIDER replacement dataset
+
+The fully generated PVLens-derived SIDER-compatible tables used in the AMIA 2026 poster are included in this repository.
+
+Location:
+
+```
+pvlens_sider_update/release/files/
+```
+
+
+The release includes the following compressed TSV files:
+
+- `meddra_all_label_indications.tsv.gz`
+- `meddra_all_indications.tsv.gz`
+- `meddra_all_label_se.tsv.gz`
+- `meddra_all_se.tsv.gz`
+
+These files are drop-in replacements for the corresponding **SIDER 4.1** tables for drugs that can be matched to PVLens via ATC codes.
+
+Additional metadata files:
+
+- `matched_flat_cids.csv` – SIDER STITCH flat identifiers matched to PVLens drugs
+- `matched_atcs.csv` – ATC codes used for drug matching
+- `sider_atcs.csv` – ATC codes extracted from SIDER
+
+All files include **SHA-256 checksums** listed in:
+
+```
+pvlens_sider_update/release/files/checksums.txt
+```
+
 ------------------------------------------------------------------------
 
 ## Citation
