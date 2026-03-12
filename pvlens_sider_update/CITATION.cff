@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: "AMIA2026"
+message: "If you use this repository, please cite the associated poster and repository."
+authors:
+  - family-names: "Painter"
+    given-names: "Jeffery L."
+repository-code: "https://github.com/jlpainter/AMIA2026"
+license: "MIT"
+

@@ -1,0 +1,75 @@
+digraph PVLensPipeline {
+    graph [
+        rankdir=LR,
+        bgcolor="#f2f2f2",
+        pad="0.35",
+        nodesep="0.5",
+        ranksep="0.9",
+        splines=ortho
+    ];
+
+    node [
+        shape=box,
+        style="rounded,filled",
+        fontname="Helvetica",
+        fontsize=16,
+        color="#2b587a",
+        penwidth=2,
+        margin="0.20,0.14",
+        width=1.7,
+        height=0.95
+    ];
+
+    edge [
+        color="#38556f",
+        penwidth=2.5,
+        arrowsize=0.8
+    ];
+
+    // Left input nodes
+    pvlens [
+        label="Extract\nATC codes\nfrom PVLens",
+        fillcolor="#dfeeed"
+    ];
+
+    sider [
+        label="Extract\nATC codes\nfrom SIDER",
+        fillcolor="#f7e7e6"
+    ];
+
+    // Main pipeline
+    normalize [
+        label="Normalize\nATC codes\nfor consistency",
+        fillcolor="#e6f0f8"
+    ];
+
+    compare [
+        label="Compare\nATC coverage\n(PVLens vs SIDER)",
+        fillcolor="#e6f0f8"
+    ];
+
+    overlap [
+        label="Identify\noverlapping drug\nclassifications",
+        fillcolor="#e6f0f8"
+    ];
+
+    merge [
+        label="Merge\nclassifications\nwith MedDRA\nside effects",
+        fillcolor="#f6f3df"
+    ];
+
+    restrict [
+        label="Restrict\nMedDRA terms\nto Preferred\nTerms (PTs)",
+        fillcolor="#eee7f5"
+    ];
+
+    // Force left-side vertical alignment of the two inputs
+    { rank=same; pvlens; sider; }
+
+    // Main row
+    normalize -> compare -> overlap -> merge -> restrict;
+
+    // Inputs feeding into normalization
+    pvlens -> normalize;
+    sider  -> normalize;
+}

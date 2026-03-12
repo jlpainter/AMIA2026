@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.credentials
+credentials.txt
+output_sider_replacements/
+.DS_Store
